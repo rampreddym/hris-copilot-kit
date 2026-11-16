@@ -1,0 +1,12 @@
+{
+  "slug": "ai-feature-governance-check",
+  "title": "AI Feature Governance Check",
+  "type": "prompt",
+  "version": "1.0.0",
+  "summary": "Decides whether to enable, pilot or decline a vendor's AI feature, with a risk rating and ten questions for the vendor.",
+  "platforms": ["Oracle HCM Cloud", "Workday", "Any HR system"],
+  "category": "AI governance",
+  "added": "2026-11-16",
+  "data_safety": "Vendor feature description and organization facts only. No employee data.",
+  "newsletter": {"title": "", "url": ""}
+}

@@ -1,0 +1,50 @@
+{
+  "name": "The HRIS Copilot Kit",
+  "repo": "https://github.com/rampreddym/hris-copilot-kit",
+  "site": "https://mittana.com/kit",
+  "full_kit_download": "https://github.com/rampreddym/hris-copilot-kit/releases/latest/download/hris-copilot-kit.zip",
+  "item_count": 2,
+  "items": [
+    {
+      "slug": "release-note-triage",
+      "title": "Release Note Triage",
+      "type": "skill",
+      "version": "1.0.0",
+      "summary": "Turns an Oracle HCM or Workday release into an impact table, a regression test plan, opt-in decisions and a note for HR.",
+      "platforms": [
+        "Oracle HCM Cloud",
+        "Workday"
+      ],
+      "category": "Release management",
+      "added": "2026-11-16",
+      "data_safety": "Release notes and a configuration profile only. No employee data.",
+      "newsletter": {
+        "title": "",
+        "url": ""
+      },
+      "path": "kit/skills/release-note-triage",
+      "download": "https://github.com/rampreddym/hris-copilot-kit/releases/latest/download/release-note-triage.zip"
+    },
+    {
+      "slug": "ai-feature-governance-check",
+      "title": "AI Feature Governance Check",
+      "type": "prompt",
+      "version": "1.0.0",
+      "summary": "Decides whether to enable, pilot or decline a vendor's AI feature, with a risk rating and ten questions for the vendor.",
+      "platforms": [
+        "Oracle HCM Cloud",
+        "Workday",
+        "Any HR system"
+      ],
+      "category": "AI governance",
+      "added": "2026-11-16",
+      "data_safety": "Vendor feature description and organization facts only. No employee data.",
+      "newsletter": {
+        "title": "",
+        "url": ""
+      },
+      "path": "kit/prompts/ai-feature-governance-check",
+      "download": "https://github.com/rampreddym/hris-copilot-kit/releases/latest/download/ai-feature-governance-check.zip"
+    }
+  ]
+}

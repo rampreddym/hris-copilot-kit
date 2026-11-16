@@ -1,0 +1,12 @@
+{
+  "slug": "release-note-triage",
+  "title": "Release Note Triage",
+  "type": "skill",
+  "version": "1.0.0",
+  "summary": "Turns an Oracle HCM or Workday release into an impact table, a regression test plan, opt-in decisions and a note for HR.",
+  "platforms": ["Oracle HCM Cloud", "Workday"],
+  "category": "Release management",
+  "added": "2026-11-16",
+  "data_safety": "Release notes and a configuration profile only. No employee data.",
+  "newsletter": {"title": "", "url": ""}
+}

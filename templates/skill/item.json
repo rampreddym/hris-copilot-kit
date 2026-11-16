@@ -1,0 +1,12 @@
+{
+  "slug": "{{slug}}",
+  "title": "{{title}}",
+  "type": "skill",
+  "version": "0.1.0",
+  "summary": "TODO: one sentence on what this does for an HRIS practitioner",
+  "platforms": ["Oracle HCM Cloud", "Workday"],
+  "category": "TODO",
+  "added": "{{date}}",
+  "data_safety": "TODO: what data the user must provide (never real employee data)",
+  "newsletter": {"title": "", "url": ""}
+}

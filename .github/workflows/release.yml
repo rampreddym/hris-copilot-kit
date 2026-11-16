@@ -1,0 +1,29 @@
+name: Release
+
+# Push a tag like v2026.11.1 to publish downloads.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate
+        run: python scripts/build.py --check
+      - name: Build downloads
+        run: python scripts/build.py --version "${GITHUB_REF_NAME}"
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" dist/* \
+            --title "The HRIS Copilot Kit ${GITHUB_REF_NAME}" \
+            --generate-notes

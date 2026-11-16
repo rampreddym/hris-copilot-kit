@@ -23,14 +23,15 @@ git add -A && git commit -m "Add Integration Error Explainer skill"
 
 ## Publish a release
 
-Releases are what the download links point to. Tag `main` after merging:
+Releases are what the download links point to. After merging to `main`:
 
-```bash
-git tag v2026.11.1   # vYEAR.MONTH.N
-git push origin v2026.11.1
-```
+1. On GitHub, open **Releases > Draft a new release**.
+2. Create a new tag named `vYEAR.MONTH.N` (for example `v2026.11.2`) on `main`.
+3. Write a short note on what's new and click **Publish release**.
 
-GitHub Actions validates the kit, builds one zip per item plus the full kit, and attaches them and `catalog.json` to a GitHub Release. Download links of the form `releases/latest/download/<slug>.zip` always serve the newest version.
+Or from a terminal: `gh release create v2026.11.2 --target main --generate-notes`
+
+GitHub Actions then validates the kit, builds one zip per item plus the full kit, and attaches them and `catalog.json` to the release within about a minute. Download links of the form `releases/latest/download/<slug>.zip` always serve the newest version.
 
 ## Link it to the newsletter
 

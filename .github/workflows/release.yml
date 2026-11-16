@@ -1,16 +1,20 @@
 name: Release
 
-# Push a tag like v2026.11.1 to publish downloads.
+# Publish a release on GitHub (Releases > Draft a new release, with a new tag
+# like v2026.11.1). This workflow then builds the downloads and attaches them.
 on:
-  push:
-    tags: ["v*"]
+  release:
+    types: [published]
 
 permissions:
   contents: write
 
 jobs:
-  release:
+  attach-downloads:
     runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,11 +23,6 @@ jobs:
       - name: Validate
         run: python scripts/build.py --check
       - name: Build downloads
-        run: python scripts/build.py --version "${GITHUB_REF_NAME}"
-      - name: Publish GitHub Release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create "${GITHUB_REF_NAME}" dist/* \
-            --title "The HRIS Copilot Kit ${GITHUB_REF_NAME}" \
-            --generate-notes
+        run: python scripts/build.py --version "$TAG"
+      - name: Attach downloads to the release
+        run: gh release upload "$TAG" dist/* --clobber --repo "${{ github.repository }}"

@@ -48,7 +48,7 @@ hris-copilot-kit/
 │   └── build.py              validates, packages zips, regenerates catalog
 ├── .github/workflows/
 │   ├── validate.yml          runs on every push and pull request
-│   └── release.yml           publishes downloads when you push a tag
+│   └── release.yml           attaches downloads when you publish a release
 ├── catalog.json              machine-readable list of items (generated)
 ├── kit.config.json           name, repo and site settings
 ├── README.md                 public front page with the catalog table (generated section)
@@ -65,7 +65,7 @@ hris-copilot-kit/
 4. **Test.** Run it in Claude on the examples at least three times. Fix anything inconsistent.
 5. **Validate.** `python scripts/build.py`, then commit.
 6. **Pair with an issue.** The newsletter explains the problem; the item solves it.
-7. **Release.** Tag `main` (`v2026.11.1`); GitHub publishes the zips.
+7. **Release.** Publish a GitHub release with a new tag (`v2026.11.1`); the workflow attaches the zips.
 8. **Link back.** Add the issue URL to `item.json` and cut a patch release.
 9. **Maintain.** Bump the item's version when it changes and note it in the changelog.
 
@@ -145,8 +145,8 @@ Download counts: `gh api repos/rampreddym/hris-copilot-kit/releases --jq '.[].as
 ## 12. Launch checklist
 
 - [ ] Decide the final name (section 2)
-- [ ] Create the empty GitHub repository and push this code
-- [ ] Push tag `v2026.11.1` and confirm the release has 2 item zips, the full kit zip and catalog.json
+- [x] Create the GitHub repository and push this code
+- [ ] Publish release `v2026.11.1` and confirm the release has 2 item zips, the full kit zip and catalog.json
 - [ ] Download each zip and test the skill upload in Claude
 - [ ] Build the /kit page on mittana.com
 - [ ] Publish the newsletter issue that introduces Release Note Triage
